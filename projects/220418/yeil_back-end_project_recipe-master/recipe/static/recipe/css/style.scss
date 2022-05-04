@@ -1,0 +1,85 @@
+$backgroundColor: rgba(0, 0, 0, 0.8);
+$fontColor: rgb(230, 230, 230);
+$border: 2px solid $fontColor;
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  color: $fontColor;
+}
+
+body {
+  padding: 10px;
+  background-color: $backgroundColor;
+}
+
+li {
+  list-style-type: none;
+}
+
+div {
+  margin: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    margin: 10px 0;
+    width: 200px;
+    height: 30px;
+    background: none;
+    border: 2px solid $fontColor;
+    cursor: pointer;
+  }
+}
+
+.video_container {
+  width: 100%;
+
+  .video_wrapper {
+    display: flex;
+    width: 620px;
+    overflow: scroll;
+    white-space: nowrap;
+    border: $border;
+
+    .video {
+      margin: 10px 20px;
+    }
+  }
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .ingredient_wrapper,
+  .video-title_wrapper {
+    width: 620px;
+    border: $border;
+  }
+}
+
+.ingredient_wrapper,
+.video-title_wrapper,
+.video_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .selected-ingredient,
+  .video-title {
+    cursor: pointer;
+  }
+}
+
+/*# sourceMappingURL=style.scss.map */
+/*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=style.scss.map */
