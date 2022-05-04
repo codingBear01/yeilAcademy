@@ -3,7 +3,7 @@ import { front, back } from './arr.js';
 shuffle(front, back);
 
 function shuffle(frontArr, backArr) {
-  const arr = [[], [], [], []];
+  const arr = [['1조: '], ['2조: '], ['3조: '], ['4조: ']];
   const shuffleF = [];
   const shuffleB = [];
 
@@ -24,13 +24,11 @@ function shuffle(frontArr, backArr) {
   for (let i = 0; i < arr.length; i++) {
     const splicedShuffleFront = shuffleF.splice(0, 2);
     const splicedShuffleBack = shuffleB.splice(0, 2);
-    arr[i].push(splicedShuffleFront);
+    arr[i].push(splicedShuffleFront + ',');
     arr[i].push(splicedShuffleBack);
   }
 
-  const result = [['1조: '], ['2조: '], ['3조: '], ['4조: ']];
-
-  arr.forEach((v, i) => result[i].push(v.join(',')));
-
-  console.log(result);
+  arr.forEach((v, i) => {
+    setTimeout(() => console.log(v.join('')), (i + 1) * 1000);
+  });
 }
