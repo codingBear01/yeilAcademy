@@ -1,8 +1,6 @@
 import { front, back } from './arr.js';
 
-shuffle(front, back);
-
-function shuffle(frontArr, backArr) {
+const shuffle = (frontArr, backArr) => {
   const arr = [['1조: '], ['2조: '], ['3조: '], ['4조: ']];
   const shuffleF = [];
   const shuffleB = [];
@@ -17,18 +15,18 @@ function shuffle(frontArr, backArr) {
       1
     )[0];
 
-    shuffleF.push(splicedFront);
-    shuffleB.push(splicedBack);
-  }
-
-  for (let i = 0; i < arr.length; i++) {
-    const splicedShuffleFront = shuffleF.splice(0, 2);
-    const splicedShuffleBack = shuffleB.splice(0, 2);
-    arr[i].push(splicedShuffleFront + ',');
-    arr[i].push(splicedShuffleBack);
+    shuffleF.push(splicedFront + '(프)');
+    shuffleB.push(splicedBack + '(백)');
   }
 
   arr.forEach((v, i) => {
-    setTimeout(() => console.log(v.join('')), (i + 1) * 1000);
+    const splicedShuffleFront = shuffleF.splice(0, 2);
+    const splicedShuffleBack = shuffleB.splice(0, 2);
+    v.push(splicedShuffleFront + ',');
+    v.push(splicedShuffleBack);
+
+    return setTimeout(() => console.log(v.join('')), (i + 1) * 1000);
   });
-}
+};
+
+shuffle(front, back);
